@@ -5,7 +5,7 @@ node_modules
 .next
 DS_Store
 python-agents/__pycache__
-
+.DS_Store
 plan.node_modules
 
 newreadme.md
