@@ -176,10 +176,10 @@ Forge AI is driven by a multi-agent engine. Each agent is a specialised collabor
 
 The `PipelineExecutor` in `python-agents/pipeline.py` coordinates everything:
 1. Run Architect.
-2. Run Planner to produce a schedule.
-3. Execute the schedule, respecting dependencies.
-4. After the schedule, run the Reviewer's requirements review.
-5. Run Supervisor scoring and final stats.
+2. Run Planner to produce a schedule respecting dependencies.
+3. Execute the schedule by multi-agent softwarre developers.
+4. After the code developement, run the Reviewer's requirements review.
+5. Run Supervisor scoring and final stats. If any multi-agent conflict arises, Supervisor will resolve it.
 
 Security findings can trigger a Supervisor debate or a Planner replan. The user can pause, resume or stop a run from the dashboard; control flags are checked between steps.
 
