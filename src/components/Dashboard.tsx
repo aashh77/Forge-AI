@@ -250,10 +250,10 @@ export default function Dashboard() {
       <header className="mb-6 flex flex-wrap items-start justify-between gap-4">
         <div className="min-w-0">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Forge AI</p>
-          <h1 className="mt-1 text-2xl font-bold text-slate-950 break-words sm:text-3xl">Autonomous Software Engineering War Room</h1>
+          <h1 className="mt-1 text-2xl font-bold text-slate-950 break-words sm:text-3xl">Autonomous Software Engineering Room</h1>
           <p className="mt-2 max-w-2xl text-sm text-slate-600">
-            Seven specialised agents plus a Supervisor design, plan, build, test, secure, review
-            and deploy your request end-to-end — live, on this dashboard.
+            Multi-Modal Agentic AI Application with eight specialised agents plus a Supervisor to design, plan, build, test, review, self-heal
+            and deploy your request — live, on this dashboard.
           </p>
         </div>
         <div
@@ -265,9 +265,9 @@ export default function Dashboard() {
         >
           {engineHealth?.reachable
             ? engineHealth.llm_configured
-              ? `Agent engine online · ${engineHealth.model}`
-              : "Agent engine online · LLM not configured (see python-agents/.env)"
-            : "Agent engine offline — start python-agents/server.py"}
+              ? `Agent engine online`
+              : "Agent engine online · LLM not configured "
+            : "Agent engine offline"}
         </div>
       </header>
 

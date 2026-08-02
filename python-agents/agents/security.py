@@ -80,10 +80,11 @@ class SecurityAgent(BaseAgent):
             "files. For architecture issues, explain why the chosen stack/framework is risky "
             "for this use case and recommend an alternative. For code issues, specify the file, "
             "the vulnerability, severity (low/medium/high), which agent should fix it "
-            "(backend/frontend/security), exact patch instructions, and whether this issue is "
+            "(backend/frontend), exact patch instructions, and whether this issue is "
             "significant enough to require a debate with that agent (requires_debate). "
-            "Only set requires_debate=true for genuine, non-trivial disagreements. Minor issues can be skipped for debate. Debate only when issue is major enough"
-            "Respond as strict JSON: "
+            "Only set requires_debate=true for genuine, non-trivial disagreements. Minor issues can be skipped for debate. Debate only when issue is major enough."
+            "Don't make your response too long. Keep it a bit short. Only mention the minor issues but don't always flag them to patch or debate. Only specify the code vulnerabilities and issues if they are major. Skip minor issues for debate or patching. Avoid patching and debate unless it is a really major issue."
+            "Respond as strict JSON(NOTHING ELSE. Do not include explanations before or after the JSON): "
             '{"architecture_issue": {"present": bool, "description": str, "recommended_change": str}, '
             '"code_findings": [{"severity": str, "file": str, "description": str, '
             '"target_agent": str, "patch_instructions": str, "requires_debate": bool}], '
@@ -199,7 +200,7 @@ class SecurityAgent(BaseAgent):
             "threat modelling and permission/RBAC analysis on a newly generated app. Also "
             "critically evaluate the Backend Agent's data-access approach and state honestly "
             "whether you would recommend a different approach (only disagree if you "
-            "genuinely think it's warranted). Respond as strict JSON: "
+            "genuinely think it's warranted). Respond as strict JSON(NOTHING ELSE. Do not include explanations before or after the JSON. Nothing apart from the correct JSON. ONLY valid JSON. Do not include markdown fences. Escape newlines as \n, tabs as \t, and quotes as \". Make no mistake in the returned JSON. It should be a perfect JSON ONLY.): "
             '{"owasp_findings": [{"category": str, "risk": "low"|"medium"|"high", '
             '"description": str, "recommendation": str}], '
             '"threat_model": str, "permission_analysis": str, '
@@ -253,7 +254,7 @@ class SecurityAgent(BaseAgent):
         system = (
             "You are the Security Agent inside Forge AI reviewing HTTP response headers from "
             "a freshly deployed app for missing security headers (CSP, X-Content-Type-Options, "
-            "HSTS, X-Frame-Options, etc.) and general dynamic risks. Respond as strict JSON: "
+            "HSTS, X-Frame-Options, etc.) and general dynamic risks. Respond as strict JSON(NOTHING ELSE. Do not include explanations before or after the JSON. Nothing apart from the correct JSON. ONLY valid JSON. Do not include markdown fences. Escape newlines as \n, tabs as \t, and quotes as \". Make no mistake in the returned JSON. It should be a perfect JSON ONLY.): "
             '{"missing_headers": [str], "risk_summary": str, "recommendations": [str]}'
         )
         user = f"Observed response headers: {json.dumps(headers_report, default=str)}"
@@ -273,7 +274,7 @@ class SecurityAgent(BaseAgent):
     def apply_patch(self, instructions: str, current_files: dict[str, str]) -> dict:
         system = (
             "You are the Security Agent applying a security fix to the given files. Return "
-            "FULL updated content for every changed file. Respond as strict JSON: "
+            "FULL updated content for every changed file. Respond as strict JSON(NOTHING ELSE. Do not include explanations before or after the JSON. Nothing apart from the correct JSON. ONLY valid JSON. Do not include markdown fences. Escape newlines as \n, tabs as \t, and quotes as \". Make no mistake in the returned JSON. It should be a perfect JSON ONLY.): "
             '{"files": {"<path>": "<content>"}, "explanation": str}'
         )
         user = f"Instructions: {instructions}\n\nCurrent files:\n{json.dumps(current_files, default=str)[:6000]}"

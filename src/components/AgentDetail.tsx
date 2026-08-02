@@ -56,9 +56,8 @@ export default function AgentDetail({
   if (!agentName) {
     return (
       <div className="rounded-2xl bg-white p-6 text-sm text-slate-500 shadow-sm ring-1 ring-slate-200">
-        Click an agent on the left to watch its live thinking, decisions and justification
-        documents, and to ask it questions directly (e.g. &ldquo;Why did Backend choose
-        Redis?&rdquo;).
+        Click an agent on the left to watch its live thinking, progress, decisions and justification
+        documents, and to ask it questions directly.
       </div>
     );
   }

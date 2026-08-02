@@ -129,7 +129,7 @@ class LLMClient:
         prompt = user_prompt
         for _ in range(retries + 1):
             result = self.chat(
-                system_prompt + "\nAlways respond with a single valid JSON object and nothing else.",
+                system_prompt + "\nAlways respond with a single valid JSON object and nothing else. No explanation before or after.",
                 prompt,
                 json_mode=True,
                 temperature=temperature,
