@@ -4,6 +4,7 @@ Forge AI is a full-stack application of a multi-modal and multi-agent software e
 
 Just type what you want to build or speak to it, explain your application, and click **Forge It** to watch a team of specialised AI agents that are fired to design, build, test, review, self-heal and auto-deploy it.
 
+
 ---
 
 ## What This Project Is
@@ -24,6 +25,8 @@ The agents are:
 - **Supervisor** — resolves conflicts and scores reliability.
 - **Deploy** — runs and deploys the generated project.
 
+---
+
 ## Special Feature - Multi-Agent Conflict Resolution:
 The Supervisor Agent is activated when a conflict or disagreement arises between any of the agents. It facilitates a structured debate by allowing the agents to present and defend their viewpoints, challenge assumptions, and provide supporting evidence. If any arguments are unclear, incomplete, or ambiguous, the Supervisor Agent asks targeted clarification questions. After evaluating the facts, reasoning, evidence, and logical consistency of the arguments, it makes the final decision and selects the most appropriate course of action.
 
@@ -41,7 +44,9 @@ Case 2: Security Agent loses
 - The Security Agent is asked to identify possible improvements that can be applied without modifying the overall architecture.
 - These security recommendations are forwarded to the Planner Agent, which incorporates them into the implementation plan.
 
+
 ---
+
 
 ## Prerequisites
 
