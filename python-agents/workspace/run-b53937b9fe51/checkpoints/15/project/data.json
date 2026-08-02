@@ -1,0 +1,20 @@
+{
+  "catalogue": [
+    {
+      "id": "coffee1",
+      "name": "Espresso",
+      "price": 3.5
+    },
+    {
+      "id": "coffee2",
+      "name": "Latte",
+      "price": 4.5
+    },
+    {
+      "id": "coffee3",
+      "name": "Cappuccino",
+      "price": 4.0
+    }
+  ],
+  "cart": []
+}

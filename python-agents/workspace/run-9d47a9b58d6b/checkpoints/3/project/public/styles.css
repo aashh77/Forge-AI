@@ -1,0 +1,18 @@
+/* Custom styles for coffee theme */
+
+/* Tailwind custom colors */
+@layer base {
+  :root {
+    --color-brown-800: #5a3e2b;
+  }
+}
+
+.bg-brown-800 {
+  background-color: var(--color-brown-800);
+}
+
+/* Image placeholder styling */
+.card-img {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}

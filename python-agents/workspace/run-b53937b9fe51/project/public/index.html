@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Coffee Catalogue</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header>
+<h1>Coffee Catalogue</h1>
+<button id="view-cart" aria-label="View cart"><i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)</button>
+</header>
+<main id="catalogue">
+<!-- Items will be inserted here -->
+</main>
+<section id="cart" hidden>
+<h2>Your Cart</h2>
+<ul id="cart-items"></ul>
+<button id="checkout" aria-label="Checkout"><i class="fas fa-credit-card"></i> Checkout</button>
+</section>
+<script src="app.js"></script>
+</body>
+</html>

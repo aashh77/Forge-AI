@@ -1,0 +1,405 @@
+{
+  "id": "demo",
+  "prompt": "Build a small webpage that shows a short poem with twinkling stars in the background.",
+  "status": "completed",
+  "error": null,
+  "created_at": 1704067200,
+  "updated_at": 1704070200,
+  "paused_at": null,
+  "agents": {
+    "architect": {
+      "name": "architect",
+      "status": "success",
+      "progress": 100,
+      "logs": [
+        { "ts": 1704067210, "message": "Thinking about requirements and constraints...", "level": "info" },
+        { "ts": 1704067220, "message": "Drafting architecture option 1 and option 2, comparing CTQs...", "level": "info" },
+        { "ts": 1704067235, "message": "Chosen architecture: Static HTML/CSS/JS frontend (no backend)", "level": "info" },
+        { "ts": 1704067240, "message": "Justification: The request is a simple static page; a backend adds unnecessary complexity, cost and attack surface.", "level": "info" },
+        { "ts": 1704067245, "message": "Components: public/index.html, public/styles.css, public/app.js, static Node server", "level": "info" },
+        { "ts": 1704067250, "message": "API style: none (static)", "level": "info" },
+        { "ts": 1704067255, "message": "Deployment target: localhost static server", "level": "info" },
+        { "ts": 1704067260, "message": "CTQs: zero build step; works offline; loads in <1s; accessible markup", "level": "info" },
+        { "ts": 1704067295, "message": "Architecture finalised and ADR written.", "level": "success" }
+      ],
+      "decisions": [
+        {
+          "id": "dec-arch-1",
+          "ts": 1704067235,
+          "topic": "architecture",
+          "chosen": "Static HTML/CSS/JS frontend (no backend)",
+          "justification": "A poem page with animated stars is purely presentational; no backend is required.",
+          "options": {
+            "option1": {
+              "name": "Static frontend",
+              "summary": "Vanilla HTML/CSS/JS served by a tiny static Node server",
+              "components": ["index.html", "styles.css", "app.js", "server.js"],
+              "pros": ["zero dependencies", "fast", "secure"],
+              "cons": ["no dynamic data"],
+              "ctq": ["zero build step", "works offline", "loads in <1s", "accessible markup"]
+            },
+            "option2": {
+              "name": "Next.js frontend",
+              "summary": "A small Next.js app with React components and SSR",
+              "components": ["Next.js", "React", "Node server"],
+              "pros": ["component model", "future-proof"],
+              "cons": ["build step required", "heavier"],
+              "ctq": ["modern framework"]
+            }
+          }
+        }
+      ],
+      "commits": [
+        { "id": "commit-arch-1", "ts": 1704067295, "message": "Authored architecture options and ADR", "files": ["docs/architecture.md"] }
+      ],
+      "started_at": 1704067210,
+      "finished_at": 1704067295,
+      "retries": 0,
+      "error": null
+    },
+    "planner": {
+      "name": "planner",
+      "status": "success",
+      "progress": 100,
+      "logs": [
+        { "ts": 1704067300, "message": "Designing the agent execution schedule...", "level": "info" },
+        { "ts": 1704067310, "message": "Schedule summary: Single-pass static page generation, QA, security, review and deploy.", "level": "info" },
+        { "ts": 1704067315, "message": "Step step-1: frontend (generate) — The chosen architecture has no backend; the Frontend Agent produces the complete static page.", "level": "info" },
+        { "ts": 1704067320, "message": "Step step-2: qa (test) — Verify the static page loads and the health endpoint responds.", "level": "info" },
+        { "ts": 1704067325, "message": "Step step-3: security (audit) — Confirm there are no secrets or XSS vectors in the static page.", "level": "info" },
+        { "ts": 1704067330, "message": "Step step-4: reviewer (review) — Validate that the page satisfies the user's exact request.", "level": "info" },
+        { "ts": 1704067335, "message": "Step step-5: deploy (generate) — Serve the static project locally for dashboard preview.", "level": "info" },
+        { "ts": 1704067395, "message": "Initial agent schedule created.", "level": "success" }
+      ],
+      "decisions": [
+        {
+          "id": "dec-plan-1",
+          "ts": 1704067340,
+          "topic": "schedule",
+          "chosen": "agent_execution_schedule",
+          "justification": "Single-pass schedule for a static frontend-only page.",
+          "schedule": [
+            { "id": "step-1", "agent": "frontend", "action": "generate", "depends_on": [], "instructions": "Generate the static poem page.", "context": "Static HTML/CSS/JS page with twinkling stars.", "reason": "No backend is needed." },
+            { "id": "step-2", "agent": "qa", "action": "test", "depends_on": ["step-1"], "instructions": "Generate and run smoke and fuzz tests.", "context": "Tests run against the deployed static server.", "reason": "Verify liveness and health endpoint." },
+            { "id": "step-3", "agent": "security", "action": "audit", "depends_on": ["step-2"], "instructions": "Scan for secrets and review static files.", "context": "Dependency-free static project.", "reason": "No attack surface beyond markup/CSS/JS." },
+            { "id": "step-4", "agent": "reviewer", "action": "review", "depends_on": ["step-3"], "instructions": "Review the page against the original request.", "context": "Final requirements gate.", "reason": "Confirm poem and twinkling stars are present." },
+            { "id": "step-5", "agent": "deploy", "action": "generate", "depends_on": ["step-4"], "instructions": "Serve the static project locally.", "context": "Final deployment step.", "reason": "Dashboard preview requires a live URL." }
+          ],
+          "concurrency_notes": "All steps run sequentially because each depends on the previous artifact."
+        }
+      ],
+      "commits": [
+        { "id": "commit-plan-1", "ts": 1704067395, "message": "Authored planning.md", "files": ["docs/planning.md"] }
+      ],
+      "started_at": 1704067300,
+      "finished_at": 1704067395,
+      "retries": 0,
+      "error": null
+    },
+    "backend": {
+      "name": "backend",
+      "status": "success",
+      "progress": 0,
+      "logs": [
+        { "ts": 1704067400, "message": "No custom backend required by chosen architecture; backend agent skipped.", "level": "info" },
+        { "ts": 1704067410, "message": "Backend agent complete.", "level": "success" }
+      ],
+      "decisions": [],
+      "commits": [],
+      "started_at": 1704067400,
+      "finished_at": 1704067410,
+      "retries": 0,
+      "error": null
+    },
+    "frontend": {
+      "name": "frontend",
+      "status": "success",
+      "progress": 100,
+      "logs": [
+        { "ts": 1704067420, "message": "Designing UI and state management for the feature...", "level": "info" },
+        { "ts": 1704067430, "message": "Generating UI components and wiring them to the API...", "level": "info" },
+        { "ts": 1704067450, "message": "Generated 3 frontend files: public/index.html, public/styles.css, public/app.js", "level": "info" },
+        { "ts": 1704067455, "message": "State management approach: vanilla-js DOMContentLoaded enhancement", "level": "info" },
+        { "ts": 1704067460, "message": "Accessibility notes: semantic main, aria-hidden decorative stars, responsive sizing", "level": "info" },
+        { "ts": 1704067495, "message": "Wrote 3 frontend files.", "level": "success" }
+      ],
+      "decisions": [
+        {
+          "id": "dec-fe-1",
+          "ts": 1704067455,
+          "topic": "state_management",
+          "chosen": "vanilla-js DOMContentLoaded enhancement",
+          "justification": "Kept dependency-free to guarantee zero-build local deployment."
+        },
+        {
+          "id": "dec-fe-2",
+          "ts": 1704067460,
+          "topic": "accessibility",
+          "chosen": "semantic HTML + aria-hidden decorative layer",
+          "justification": "The starfield is decorative, so it is hidden from assistive technology."
+        }
+      ],
+      "commits": [
+        { "id": "commit-fe-1", "ts": 1704067495, "message": "Generated frontend (3 files)", "files": ["public/index.html", "public/styles.css", "public/app.js"] }
+      ],
+      "started_at": 1704067420,
+      "finished_at": 1704067495,
+      "retries": 0,
+      "error": null
+    },
+    "qa": {
+      "name": "qa",
+      "status": "success",
+      "progress": 100,
+      "logs": [
+        { "ts": 1704067500, "message": "Generating smoke tests, edge cases and fuzz payloads...", "level": "info" },
+        { "ts": 1704067510, "message": "Identified 5 edge cases and 5 fuzz payloads.", "level": "info" },
+        { "ts": 1704067520, "message": "Executing smoke tests against the demo deployment...", "level": "info" },
+        { "ts": 1704067525, "message": "Smoke tests passed.", "level": "success" },
+        { "ts": 1704067530, "message": "Executing fuzz test script against the demo deployment...", "level": "info" },
+        { "ts": 1704067535, "message": "Fuzz script executed.", "level": "success" },
+        { "ts": 1704067540, "message": "Checking overall code quality...", "level": "info" },
+        { "ts": 1704067545, "message": "Code quality score: 95/100", "level": "info" },
+        { "ts": 1704067550, "message": "Quality check complete. Score: 95/100.", "level": "success" }
+      ],
+      "decisions": [
+        {
+          "id": "dec-qa-1",
+          "ts": 1704067545,
+          "topic": "code_quality",
+          "chosen": "95/100",
+          "justification": "Dependency-free static page with clear structure, no duplication and good accessibility.",
+          "issues": []
+        }
+      ],
+      "commits": [
+        { "id": "commit-qa-1", "ts": 1704067515, "message": "Generated QA smoke and fuzz tests", "files": ["tests/smoke.mjs", "tests/fuzz.mjs"] },
+        { "id": "commit-qa-2", "ts": 1704067555, "message": "Completed code quality review", "files": ["docs/quality_review.md"] }
+      ],
+      "started_at": 1704067500,
+      "finished_at": 1704067555,
+      "retries": 0,
+      "error": null
+    },
+    "security": {
+      "name": "security",
+      "status": "success",
+      "progress": 100,
+      "logs": [
+        { "ts": 1704067560, "message": "Scanning the whole codebase for vulnerabilities...", "level": "info" },
+        { "ts": 1704067570, "message": "Security audit complete. Total findings: 0", "level": "info" },
+        { "ts": 1704067575, "message": "No security findings requiring action.", "level": "success" }
+      ],
+      "decisions": [
+        {
+          "id": "dec-sec-1",
+          "ts": 1704067570,
+          "topic": "security_audit",
+          "chosen": "audit_complete",
+          "justification": "Found 0 code finding(s), 0 debated. Architecture issue: false.",
+          "findings": [],
+          "debate_findings": [],
+          "patch_findings": [],
+          "architecture_issue": { "present": false, "description": "", "recommended_change": "" }
+        }
+      ],
+      "commits": [
+        { "id": "commit-sec-1", "ts": 1704067580, "message": "Completed full security audit", "files": ["docs/security_audit_report.md"] }
+      ],
+      "started_at": 1704067560,
+      "finished_at": 1704067580,
+      "retries": 0,
+      "error": null
+    },
+    "reviewer": {
+      "name": "reviewer",
+      "status": "success",
+      "progress": 100,
+      "logs": [
+        { "ts": 1704067585, "message": "Reviewing the whole codebase against the original request...", "level": "info" },
+        { "ts": 1704067595, "message": "Requirements met: true", "level": "info" },
+        { "ts": 1704067600, "message": "Architecture adequate: true", "level": "info" },
+        { "ts": 1704067605, "message": "Reviewing every commit from every agent...", "level": "info" },
+        { "ts": 1704067615, "message": "Commit commit-fe-1 by frontend: approved — clean static files", "level": "info" },
+        { "ts": 1704067620, "message": "Commit commit-qa-1 by qa: approved — tests cover root and health", "level": "info" },
+        { "ts": 1704067625, "message": "Commit commit-sec-1 by security: approved — no findings", "level": "info" },
+        { "ts": 1704067630, "message": "Code review complete.", "level": "success" }
+      ],
+      "decisions": [
+        {
+          "id": "dec-rev-1",
+          "ts": 1704067595,
+          "topic": "requirements_review",
+          "chosen": "requirements_review_complete",
+          "justification": "The page displays a poem and a twinkling starfield on all screen sizes.",
+          "requirements_met": true,
+          "architecture_adequate": true,
+          "missing_requirements": []
+        },
+        {
+          "id": "dec-rev-2",
+          "ts": 1704067625,
+          "topic": "code_review",
+          "chosen": "98% PR acceptance",
+          "justification": "Aggregate of per-commit reviews across all agents."
+        }
+      ],
+      "commits": [
+        { "id": "commit-rev-1", "ts": 1704067595, "message": "Reviewed codebase against user requirements", "files": ["docs/requirements_review.md"] },
+        { "id": "commit-rev-2", "ts": 1704067635, "message": "Authored review.md", "files": ["docs/review.md"] }
+      ],
+      "started_at": 1704067585,
+      "finished_at": 1704067635,
+      "retries": 0,
+      "error": null
+    },
+    "supervisor": {
+      "name": "supervisor",
+      "status": "success",
+      "progress": 100,
+      "logs": [
+        { "ts": 1704067640, "message": "No conflicts detected among agent decisions.", "level": "info" },
+        { "ts": 1704067650, "message": "Scoring reliability from observed signals...", "level": "info" },
+        { "ts": 1704067660, "message": "Reliability scorecard written to docs/reliability_scorecard.md", "level": "success" }
+      ],
+      "decisions": [
+        {
+          "id": "dec-sup-1",
+          "ts": 1704067655,
+          "topic": "reliability",
+          "chosen": "scorecard_complete",
+          "justification": "Deployment succeeded, QA passed, no retries, no debates, low complexity."
+        }
+      ],
+      "commits": [
+        { "id": "commit-sup-1", "ts": 1704067660, "message": "Authored reliability scorecard", "files": ["docs/reliability_scorecard.md"] }
+      ],
+      "started_at": 1704067640,
+      "finished_at": 1704067660,
+      "retries": 0,
+      "error": null
+    },
+    "deploy": {
+      "name": "deploy",
+      "status": "success",
+      "progress": 100,
+      "logs": [
+        { "ts": 1704067670, "message": "Project files ready for static deployment", "level": "info" },
+        { "ts": 1704067675, "message": "Static server configured for public/ folder", "level": "info" },
+        { "ts": 1704067680, "message": "Health check passed: GET /api/health -> 200", "level": "success" },
+        { "ts": 1704067685, "message": "Demo deployment served at /demo/index.html", "level": "success" }
+      ],
+      "decisions": [
+        {
+          "id": "dec-dep-1",
+          "ts": 1704067680,
+          "topic": "deployment",
+          "chosen": "static_server_running",
+          "justification": "Static files are served by a minimal Node server and the health endpoint is reachable."
+        }
+      ],
+      "commits": [
+        { "id": "commit-dep-1", "ts": 1704067685, "message": "Deployed static project", "files": ["server.js"] }
+      ],
+      "started_at": 1704067670,
+      "finished_at": 1704067685,
+      "retries": 0,
+      "error": null
+    }
+  },
+  "checkpoints": [
+    { "number": 1, "id": "cp-1", "description": "Architecture decided", "tag": "architecture", "ts": 1704067300 },
+    { "number": 2, "id": "cp-2", "description": "Planner schedule created", "tag": "planning", "ts": 1704067400 },
+    { "number": 3, "id": "cp-3", "description": "Frontend generated", "tag": "frontend", "ts": 1704067500 },
+    { "number": 4, "id": "cp-4", "description": "QA tests passed", "tag": "qa", "ts": 1704067560 },
+    { "number": 5, "id": "cp-5", "description": "Security audit complete", "tag": "security", "ts": 1704067580 },
+    { "number": 6, "id": "cp-6", "description": "Review complete", "tag": "reviewer", "ts": 1704067635 },
+    { "number": 7, "id": "cp-7", "description": "Deployment live", "tag": "deploy", "ts": 1704067685 },
+    { "number": 8, "id": "cp-8", "description": "Run complete: reliability scored", "tag": "final", "ts": 1704070200 }
+  ],
+  "debates": [],
+  "chat_history": {
+    "architect": [],
+    "planner": [],
+    "backend": [],
+    "frontend": [],
+    "qa": [],
+    "security": [],
+    "reviewer": [],
+    "supervisor": [],
+    "deploy": []
+  },
+  "deployment": {
+    "status": "running",
+    "url": "/demo/index.html",
+    "port": null,
+    "attempts": 1,
+    "logs": [
+      { "ts": 1704067670, "message": "Project files ready for static deployment" },
+      { "ts": 1704067675, "message": "Static server configured for public/ folder" },
+      { "ts": 1704067685, "message": "Demo deployment served at /demo/index.html" }
+    ]
+  },
+  "reliability": {
+    "code_quality": 95,
+    "security": 92,
+    "architecture": 94,
+    "test_coverage": 96,
+    "hallucination_risk": 8,
+    "complexity": "low",
+    "estimated_bugs": 0
+  },
+  "stats": {
+    "compilation_success_pct": 100,
+    "tests_passed_pct": 100,
+    "pr_acceptance_pct": 98,
+    "latency_seconds": 9.6,
+    "token_usage": 12400,
+    "cost_usd": 0.0082,
+    "reliability_avg": 93,
+    "regression_history": []
+  },
+  "incidents": [],
+  "active_debug": null,
+  "_usage": [],
+  "control": {
+    "paused": false,
+    "stopped": false,
+    "resume_stage": 0
+  },
+  "pipeline_context": {
+    "architecture": {
+      "chosen": "option1",
+      "option1": {
+        "name": "Static frontend",
+        "summary": "Vanilla HTML/CSS/JS served by a tiny static Node server",
+        "components": ["index.html", "styles.css", "app.js", "server.js"],
+        "pros": ["zero dependencies", "fast", "secure"],
+        "cons": ["no dynamic data"],
+        "ctq": ["zero build step", "works offline", "loads in <1s", "accessible markup"]
+      },
+      "option2": {
+        "name": "Next.js frontend",
+        "summary": "A small Next.js app with React components and SSR",
+        "components": ["Next.js", "React", "Node server"],
+        "pros": ["component model", "future-proof"],
+        "cons": ["build step required", "heavier"],
+        "ctq": ["modern framework"]
+      },
+      "justification": "A poem page with animated stars is purely presentational; no backend is required.",
+      "has_backend": false,
+      "api_style": "none (static)",
+      "deployment_target": "localhost static server"
+    },
+    "schedule": [
+      { "id": "step-1", "agent": "frontend", "action": "generate", "depends_on": [], "instructions": "Generate the static poem page.", "context": "Static HTML/CSS/JS page with twinkling stars.", "reason": "No backend is needed." },
+      { "id": "step-2", "agent": "qa", "action": "test", "depends_on": ["step-1"], "instructions": "Generate and run smoke and fuzz tests.", "context": "Tests run against the deployed static server.", "reason": "Verify liveness and health endpoint." },
+      { "id": "step-3", "agent": "security", "action": "audit", "depends_on": ["step-2"], "instructions": "Scan for secrets and review static files.", "context": "Dependency-free static project.", "reason": "No attack surface beyond markup/CSS/JS." },
+      { "id": "step-4", "agent": "reviewer", "action": "review", "depends_on": ["step-3"], "instructions": "Review the page against the original request.", "context": "Final requirements gate.", "reason": "Confirm poem and twinkling stars are present." },
+      { "id": "step-5", "agent": "deploy", "action": "generate", "depends_on": ["step-4"], "instructions": "Serve the static project locally.", "context": "Final deployment step.", "reason": "Dashboard preview requires a live URL." }
+    ],
+    "outputs": {},
+    "step_index": 5,
+    "deployment": { "success": true, "url": "/demo/index.html", "port": null }
+  }
+}

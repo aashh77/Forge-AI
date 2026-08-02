@@ -1,0 +1,37 @@
+[  
+  {
+    "id": 1,
+    "name": "Classic Espresso",
+    "description": "Strong, aromatic espresso shot, perfect for a quick pick‑up.",
+    "price": 2.50,
+    "image": "https://images.unsplash.com/photo-1511920170033-f839c3c1e1e0?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": 2,
+    "name": "Vanilla Latte",
+    "description": "Smooth latte with a hint of vanilla, topped with foam art.",
+    "price": 4.00,
+    "image": "https://images.unsplash.com/photo-1509042239860-f550ce1a3d9a?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": 3,
+    "name": "Cold Brew",
+    "description": "Slow‑steeped cold brew served over ice, refreshing and bold.",
+    "price": 3.75,
+    "image": "https://images.unsplash.com/photo-1523986371872-9d3b1a8b1c2e?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": 4,
+    "name": "Cappuccino",
+    "description": "Espresso with steamed milk and a generous foam layer.",
+    "price": 3.50,
+    "image": "https://images.unsplash.com/photo-1585238342029-3c5c3e7d7c3b?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": 5,
+    "name": "Mocha",
+    "description": "Chocolate‑infused latte, sweet and creamy.",
+    "price": 4.25,
+    "image": "https://images.unsplash.com/photo-1510627498534-cf7e5a7c3c9d?auto=format&fit=crop&w=400&q=80"
+  }
+]

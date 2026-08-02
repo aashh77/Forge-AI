@@ -1,0 +1,19 @@
+body{font-family:Arial,sans-serif;margin:0;padding:0;background:#f9f9f9;color:#333}
+header{background:#6f4e37;color:#fff;padding:1rem;display:flex;justify-content:space-between;align-items:center}
+header h1{margin:0}
+.cart-btn{background:#8c5a3b;color:#fff;border:none;padding:0.5rem 1rem;border-radius:4px;cursor:pointer}
+.cart-btn i{margin-right:0.5rem}
+main{padding:1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+.card{background:#fff;border-radius:4px;box-shadow:0 2px 5px rgba(0,0,0,0.1);overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:150px;object-fit:cover}
+.card-content{padding:1rem;flex:1}
+.card-content h3{margin:0 0 0.5rem}
+.card-content p{margin:0 0 1rem;font-size:0.9rem;color:#555}
+.card-content button{background:#6f4e37;color:#fff;border:none;padding:0.5rem 1rem;border-radius:4px;cursor:pointer;width:100%}
+.cart{position:fixed;top:0;right:0;width:300px;height:100%;background:#fff;box-shadow:-2px 0 5px rgba(0,0,0,0.1);padding:1rem;overflow-y:auto;display:flex;flex-direction:column}
+.cart.hidden{display:none}
+.cart h2{margin-top:0}
+.cart-item{display:flex;justify-content:space-between;margin-bottom:0.5rem}
+.cart-total{margin-top:auto;font-weight:bold;font-size:1.2rem}
+.close-btn{background:#6f4e37;color:#fff;border:none;padding:0.5rem;border-radius:4px;cursor:pointer;margin-top:1rem}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Bean Café</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-brown-800 text-white py-4">
+        <div class="container mx-auto flex flex-col items-center">
+            <h1 class="text-3xl font-bold">Java Bean Café</h1>
+            <p class="text-sm mt-1">Freshly brewed coffee & cozy vibes</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-6">
+        <section class="mb-6">
+            <label for="search" class="block text-sm font-medium mb-2">Search our menu</label>
+            <input id="search" type="text" placeholder="e.g., Latte, Espresso" class="w-full p-2 border border-gray-300 rounded" aria-label="Search menu items">
+        </section>
+
+        <section id="catalogue" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Items will be injected here by app.js -->
+        </section>
+    </main>
+
+    <footer class="bg-brown-800 text-white py-4 mt-12">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2026 Java Bean Café. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

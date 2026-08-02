@@ -1,0 +1,10 @@
+{
+  "name": "starry-poem",
+  "version": "1.0.0",
+  "description": "A small webpage that shows a short poem with twinkling stars in the background.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}

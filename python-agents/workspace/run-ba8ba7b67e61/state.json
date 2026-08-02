@@ -1,0 +1,166 @@
+{
+  "id": "run-ba8ba7b67e61",
+  "prompt": "build a web page with a catalogue for a coffee shop with appropriate coffee themes. i should be able to add stuff in the cart and review my cart",
+  "status": "failed",
+  "error": "Pipeline error: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1785628800000'}, 'limit_source': 'openrouter_free_tier_daily', 'remedy_hint': 'Wait for the daily reset (see X-RateLimit-Reset), or purchase credits to raise your free-model daily limit.', 'provider_name': None}}, 'user_id': 'user_3H8DgaH4S8EQusyaZjMAWSLniLX'}",
+  "created_at": 1785619711.8183942,
+  "updated_at": 1785619716.516321,
+  "paused_at": null,
+  "agents": {
+    "architect": {
+      "name": "architect",
+      "status": "running",
+      "progress": 5,
+      "logs": [
+        {
+          "ts": 1785619711.834767,
+          "message": "Deciding architecture, tech stack, ADR and CTQs...",
+          "level": "info"
+        },
+        {
+          "ts": 1785619711.8400698,
+          "message": "Thinking about requirements and constraints...",
+          "level": "info"
+        },
+        {
+          "ts": 1785619711.842222,
+          "message": "Drafting architecture option 1 and option 2, comparing CTQs...",
+          "level": "info"
+        }
+      ],
+      "decisions": [],
+      "commits": [],
+      "started_at": 1785619711.838183,
+      "finished_at": null,
+      "retries": 0,
+      "error": null
+    },
+    "planner": {
+      "name": "planner",
+      "status": "idle",
+      "progress": 0,
+      "logs": [],
+      "decisions": [],
+      "commits": [],
+      "started_at": null,
+      "finished_at": null,
+      "retries": 0,
+      "error": null
+    },
+    "backend": {
+      "name": "backend",
+      "status": "idle",
+      "progress": 0,
+      "logs": [],
+      "decisions": [],
+      "commits": [],
+      "started_at": null,
+      "finished_at": null,
+      "retries": 0,
+      "error": null
+    },
+    "frontend": {
+      "name": "frontend",
+      "status": "idle",
+      "progress": 0,
+      "logs": [],
+      "decisions": [],
+      "commits": [],
+      "started_at": null,
+      "finished_at": null,
+      "retries": 0,
+      "error": null
+    },
+    "qa": {
+      "name": "qa",
+      "status": "idle",
+      "progress": 0,
+      "logs": [],
+      "decisions": [],
+      "commits": [],
+      "started_at": null,
+      "finished_at": null,
+      "retries": 0,
+      "error": null
+    },
+    "security": {
+      "name": "security",
+      "status": "idle",
+      "progress": 0,
+      "logs": [],
+      "decisions": [],
+      "commits": [],
+      "started_at": null,
+      "finished_at": null,
+      "retries": 0,
+      "error": null
+    },
+    "reviewer": {
+      "name": "reviewer",
+      "status": "idle",
+      "progress": 0,
+      "logs": [],
+      "decisions": [],
+      "commits": [],
+      "started_at": null,
+      "finished_at": null,
+      "retries": 0,
+      "error": null
+    },
+    "supervisor": {
+      "name": "supervisor",
+      "status": "idle",
+      "progress": 0,
+      "logs": [],
+      "decisions": [],
+      "commits": [],
+      "started_at": null,
+      "finished_at": null,
+      "retries": 0,
+      "error": null
+    },
+    "deploy": {
+      "name": "deploy",
+      "status": "idle",
+      "progress": 0,
+      "logs": [],
+      "decisions": [],
+      "commits": [],
+      "started_at": null,
+      "finished_at": null,
+      "retries": 0,
+      "error": null
+    }
+  },
+  "checkpoints": [],
+  "debates": [],
+  "chat_history": {
+    "architect": [],
+    "planner": [],
+    "backend": [],
+    "frontend": [],
+    "qa": [],
+    "security": [],
+    "reviewer": [],
+    "supervisor": [],
+    "deploy": []
+  },
+  "deployment": {
+    "status": "not_started",
+    "url": null,
+    "port": null,
+    "attempts": 0,
+    "logs": []
+  },
+  "reliability": {},
+  "stats": {},
+  "incidents": [],
+  "active_debug": null,
+  "_usage": [],
+  "control": {
+    "paused": false,
+    "stopped": false,
+    "resume_stage": 0
+  },
+  "pipeline_context": {}
+}

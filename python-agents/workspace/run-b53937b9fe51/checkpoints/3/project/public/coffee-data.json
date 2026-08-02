@@ -1,0 +1,36 @@
+[  {
+    "id": "1",
+    "name": "Espresso",
+    "description": "Strong and bold espresso shot.",
+    "price": 2.50,
+    "image": "https://picsum.photos/300/200?random=1"
+  },
+  {
+    "id": "2",
+    "name": "Cappuccino",
+    "description": "Espresso with steamed milk and foam.",
+    "price": 3.75,
+    "image": "https://picsum.photos/300/200?random=2"
+  },
+  {
+    "id": "3",
+    "name": "Latte",
+    "description": "Smooth espresso with steamed milk.",
+    "price": 3.50,
+    "image": "https://picsum.photos/300/200?random=3"
+  },
+  {
+    "id": "4",
+    "name": "Americano",
+    "description": "Espresso diluted with hot water.",
+    "price": 2.75,
+    "image": "https://picsum.photos/300/200?random=4"
+  },
+  {
+    "id": "5",
+    "name": "Mocha",
+    "description": "Chocolate flavored latte.",
+    "price": 4.00,
+    "image": "https://picsum.photos/300/200?random=5"
+  }
+]

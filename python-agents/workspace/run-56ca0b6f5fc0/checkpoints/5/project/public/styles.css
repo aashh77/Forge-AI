@@ -1,0 +1,40 @@
+/* Coffee Theme Variables */
+:root {
+    --primary: #6d4c41; /* Dark brown */
+    --secondary: #a1887f; /* Light brown */
+    --accent: #b38858; /* Coffee bean */
+    --bg: #fdf6e3; /* Creamy background */
+    --text: #5d4037; /* Dark text */
+    --card-bg: #fff8e1; /* Light card background */
+    --button-bg: var(--primary);
+    --button-hover: #5d4037;
+}
+
+/* Basic reset */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+
+header{background:var(--primary);color:#fff;padding:1rem;display:flex;justify-content:space-between;align-items:center;}
+header h1{font-size:1.8rem;display:flex;align-items:center;gap:0.5rem;}
+header nav ul{list-style:none;display:flex;gap:1rem;}
+header nav a{color:#fff;text-decoration:none;}
+header nav a:hover{text-decoration:underline;}
+
+.catalog{padding:2rem;}
+.filter{margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;}
+.filter label{font-weight:600;}
+.filter select{padding:0.3rem 0.5rem;border:1px solid var(--secondary);border-radius:4px;background:#fff;color:var(--text);}
+
+.items-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.5rem;}
+
+.item-card{background:var(--card-bg);border-radius:8px;overflow:hidden;box-shadow:0 2px 5px rgba(0,0,0,.1);display:flex;flex-direction:column;}
+.item-card img{width:100%;height:150px;object-fit:cover;}
+.item-card .content{padding:1rem;flex:1;display:flex;flex-direction:column;justify-content:space-between;}
+.item-card h3{font-size:1.2rem;margin-bottom:.5rem;}
+.item-card p{font-size:.9rem;margin-bottom:.5rem;flex:1;}
+.item-card .price{font-weight:bold;margin-bottom:.5rem;}
+.item-card button{background:var(--button-bg);color:#fff;border:none;padding:.5rem 1rem;border-radius:4px;cursor:pointer;transition:background .2s ease;}
+.item-card button:hover{background:var(--button-hover);}
+
+footer{background:var(--primary);color:#fff;text-align:center;padding:1rem 0;}
+footer p{font-size:.9rem;}

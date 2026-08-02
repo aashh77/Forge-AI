@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Aroma – Coffee Catalogue</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-coffee"></i> Café Aroma</h1>
+        <nav>
+            <ul>
+                <li><a href="#catalog">Catalogue</a></li>
+                <li><a href="#cart" aria-label="View cart"><i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="catalog" class="catalog">
+        <section class="filter">
+            <label for="type-filter">Filter by type:</label>
+            <select id="type-filter">
+                <option value="all">All</option>
+                <option value="espresso">Espresso</option>
+                <option value="latte">Latte</option>
+                <option value="cappuccino">Cappuccino</option>
+                <option value="americano">Americano</option>
+            </select>
+        </section>
+        <div id="items" class="items-grid"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Café Aroma. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
