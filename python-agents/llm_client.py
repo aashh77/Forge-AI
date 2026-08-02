@@ -142,7 +142,7 @@ class LLMClient:
                 last_error = exc
                 prompt = (
                     f"{user_prompt}\n\nYour previous reply could not be parsed as JSON "
-                    f"({exc}). Reply again with ONLY a valid JSON object:\n{result.content}"
+                    f"({exc}). Reply again with ONLY a valid JSON object(check for its validity before replying. The JSON should be fully valid. Make sure that teh response is directly parseable by Python json.loads().  For quotes or new lines use \" or \' or \n. Take care of UNTERMINATED STRINGS. ):\n{result.content}"
                 )
         raise LLMOutputError(f"LLM did not return valid JSON after retries: {last_error}")
 
