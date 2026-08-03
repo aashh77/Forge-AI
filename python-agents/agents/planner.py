@@ -43,8 +43,8 @@ class PlannerAgent(BaseAgent):
             + backend_note +
             "Each schedule step must specify: agent, action, dependencies (step ids), and a clear "
             "reason grounded in the architecture. Valid agents: backend, frontend, security, qa, "
-            "reviewer, supervisor, deploy. Valid actions: generate, patch, audit, test, review, "
-            "debate, score. Supervisor can only have Valid action as debate. Respond as strict JSON with this exact shape: "
+            "reviewer, deploy. Valid actions: generate, patch, audit, test, review, "
+            "debate, score. Respond as strict JSON with this exact shape: "
             '{"schedule": [{"id": str, "agent": str, "action": str, "depends_on": [str], '
             '"instructions": str, "context": str, "reason": str}], '
             '"schedule_summary": str, "concurrency_notes": str}'

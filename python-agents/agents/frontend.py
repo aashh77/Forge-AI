@@ -26,7 +26,7 @@ class FrontendAgent(BaseAgent):
                 "3) Use a simple, explicit state management pattern in plain JS and document it. "
                 "4) Expose a small user-configurable settings object window.APP_CONFIG. "
                 "5) For images, ALWAYS use placeholder URLs like https://picsum.photos/300/200 instead of local file paths. For icons, include FontAwesome or Lucide via CDN in the HTML head (e.g., <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>) and use icon classes (<i class='fas fa-user'></i>) instead of leaving empty boxes or missing files."
-                "Respond as strict JSON(Respond ONLY with valid JSON. No markdown fences, no explanations, no text before or after. The response must be directly parseable by Python json.loads(). All file contents must be valid JSON strings with properly escaped quotes, backslashes, tabs, and newlines. Never output raw unescaped control characters inside strings.): {\"files\": {\"<relative path>\": \"<content>\"}, "
+                "Respond as strict JSON: {\"files\": {\"<relative path>\": \"<content>\"}, "
                 "\"state_management\": str, \"accessibility_notes\": str, "
                 "\"user_configuration\": object}"
             )
@@ -43,7 +43,7 @@ class FrontendAgent(BaseAgent):
                 "3) Use a simple, explicit state management pattern in plain JS and document it. "
                 "4) Expose a small user-configurable settings object window.APP_CONFIG. "
                 "5) For images, ALWAYS use placeholder URLs like https://picsum.photos/300/200 instead of local file paths. For icons, include FontAwesome or Lucide via CDN in the HTML head (e.g., <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>) and use icon classes (<i class='fas fa-user'></i>) instead of leaving empty boxes or missing files."
-                "Respond as strict JSON(Respond ONLY with valid JSON. No markdown fences, no explanations, no text before or after. The response must be directly parseable by Python json.loads(). All file contents must be valid JSON strings with properly escaped quotes, backslashes, tabs, and newlines. Never output raw unescaped control characters inside strings.): {\"files\": {\"<relative path>\": \"<content>\"}, "
+                "Respond as strict JSON: {\"files\": {\"<relative path>\": \"<content>\"}, "
                 "\"state_management\": str, \"accessibility_notes\": str, "
                 "\"user_configuration\": object}"
             )
@@ -92,7 +92,7 @@ class FrontendAgent(BaseAgent):
                 "JSON-file download/upload if persistence is needed). Include public/index.html, "
                 "public/styles.css, public/app.js at minimum. "
                 "For images, ALWAYS use placeholder URLs like https://picsum.photos/300/200 instead of local file paths. For icons, include FontAwesome or Lucide via CDN in the HTML head (e.g., <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>) and use icon classes (<i class='fas fa-user'></i>) instead of leaving empty boxes or missing files."
-                "Respond as strict JSON(Respond ONLY with valid JSON. No markdown fences, no explanations, no text before or after. The response must be directly parseable by Python json.loads(). All file contents must be valid JSON strings with properly escaped quotes, backslashes, tabs, and newlines. Never output raw unescaped control characters inside strings.): {\"files\": {\"<relative path>\": \"<content>\"}, "
+                "Respond as strict JSON: {\"files\": {\"<relative path>\": \"<content>\"}, "
                 "\"state_management\": str, \"accessibility_notes\": str, "
                 "\"user_configuration\": object}"
             )
@@ -103,7 +103,7 @@ class FrontendAgent(BaseAgent):
                 "backend's REST API using same-origin relative paths like /api/.... Include "
                 "public/index.html, public/styles.css, public/app.js at minimum. "
                 "For images, ALWAYS use placeholder URLs like https://picsum.photos/300/200 instead of local file paths. For icons, include FontAwesome or Lucide via CDN in the HTML head (e.g., <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>) and use icon classes (<i class='fas fa-user'></i>) instead of leaving empty boxes or missing files."
-                "Respond as strict JSON(Respond ONLY with valid JSON. No markdown fences, no explanations, no text before or after. The response must be directly parseable by Python json.loads(). All file contents must be valid JSON strings with properly escaped quotes, backslashes, tabs, and newlines. Never output raw unescaped control characters inside strings.): {\"files\": {\"<relative path>\": \"<content>\"}, "
+                "Respond as strict JSON: {\"files\": {\"<relative path>\": \"<content>\"}, "
                 "\"state_management\": str, \"accessibility_notes\": str, "
                 "\"user_configuration\": object}"
             )
@@ -144,7 +144,7 @@ class FrontendAgent(BaseAgent):
         system = (
             "You are the Frontend Agent fixing your own previously generated code. Given the "
             "current files and required changes, return FULL updated file contents for every "
-            "changed file. Respond as strict JSON(Respond ONLY with valid JSON. No markdown fences, no explanations, no text before or after. The response must be directly parseable by Python json.loads(). All file contents must be valid JSON strings with properly escaped quotes, backslashes, tabs, and newlines. Never output raw unescaped control characters inside strings.): {\"files\": {\"<path>\": \"<content>\"}, "
+            "changed file. Respond as strict JSON: {\"files\": {\"<path>\": \"<content>\"}, "
             "\"explanation\": str}"
         )
         user = f"Instructions: {instructions}\n\nCurrent files:\n{json.dumps(current_files, default=str)[:6000]}"

@@ -4,7 +4,7 @@
   "status": "failed",
   "error": "Pipeline error: Unknown step: supervisor.review",
   "created_at": 1785665729.539423,
-  "updated_at": 1785669804.027339,
+  "updated_at": 1785693317.826328,
   "paused_at": null,
   "agents": {
     "architect": {
@@ -2368,7 +2368,7 @@
     "deploy": []
   },
   "deployment": {
-    "status": "running",
+    "status": "not_live",
     "url": "http://localhost:4100",
     "port": 4100,
     "attempts": 2,

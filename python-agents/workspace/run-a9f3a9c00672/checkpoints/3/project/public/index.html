@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Aroma – Coffee Catalogue</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-coffee"></i> Café Aroma</h1>
+        <p>Explore our hand‑picked coffee selections.</p>
+    </header>
+
+    <section class="filters" aria-label="Filter options">
+        <label for="categoryFilter">Category:</label>
+        <select id="categoryFilter" name="categoryFilter">
+            <option value="all">All</option>
+            <option value="Espresso">Espresso</option>
+            <option value="Latte">Latte</option>
+            <option value="Cappuccino">Cappuccino</option>
+            <option value="Americano">Americano</option>
+            <option value="Mocha">Mocha</option>
+        </select>
+
+        <label for="priceFilter">Max Price ($):</label>
+        <input type="number" id="priceFilter" name="priceFilter" min="0" step="0.01" placeholder="e.g., 5.00">
+
+        <button id="applyFilters" aria-label="Apply filters">Apply</button>
+    </section>
+
+    <main id="catalogue" aria-live="polite">
+        <!-- Catalogue items will be injected here by app.js -->
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Café Aroma. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

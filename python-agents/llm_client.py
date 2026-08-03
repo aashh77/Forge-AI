@@ -129,7 +129,7 @@ class LLMClient:
         prompt = user_prompt
         for _ in range(retries + 1):
             result = self.chat(
-                system_prompt + "\nAlways respond with a single valid JSON object and nothing else. No explanation before or after.  The response must be directly parseable by Python json.loads(). Never output raw unescaped control characters inside strings. Give a fully valid JSON. MAKE SURE THE RETURNED REPLY IS A FULLY VALID JSON. For quotes or new lines use \" or \' or \n (fully valid). No unterminated strings. Check your response for its validity as a JSON before responding.",
+                system_prompt + "\nAlways respond with a single valid JSON object and nothing else. No explanation before or after.",
                 prompt,
                 json_mode=True,
                 temperature=temperature,
@@ -142,7 +142,7 @@ class LLMClient:
                 last_error = exc
                 prompt = (
                     f"{user_prompt}\n\nYour previous reply could not be parsed as JSON "
-                    f"({exc}). Reply again with ONLY a valid JSON object(VERY VERY IMPORTANT: check for its validity before replying. The JSON should be fully valid. Make sure that teh response is directly parseable by Python json.loads().  For quotes or new lines use \" or \' or \n (take care of raw unescaped control characters inside strings). Take care of UNTERMINATED STRINGS. ):\n{result.content}"
+                    f"({exc}). Reply again with ONLY a valid JSON object:\n{result.content}"
                 )
         raise LLMOutputError(f"LLM did not return valid JSON after retries: {last_error}")
 

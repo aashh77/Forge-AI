@@ -4,7 +4,7 @@
   "status": "failed",
   "error": "Pipeline error: Unknown step: supervisor.score",
   "created_at": 1785613827.5887601,
-  "updated_at": 1785619686.67949,
+  "updated_at": 1785761736.121235,
   "paused_at": null,
   "agents": {
     "architect": {
@@ -1066,7 +1066,7 @@
     "deploy": []
   },
   "deployment": {
-    "status": "not_live",
+    "status": "running",
     "url": "http://localhost:4100",
     "port": 4100,
     "attempts": 1,

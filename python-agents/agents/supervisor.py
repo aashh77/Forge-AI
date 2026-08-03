@@ -108,7 +108,7 @@ class SupervisorAgent(BaseAgent):
         }
 
         # Limit debate to 3 rounds max; stop early on concession.
-        for round_no in range(1, 4):
+        for round_no in range(1, 3):
             round_turns = []
             for agent_name, position in positions.items():
                 system = (

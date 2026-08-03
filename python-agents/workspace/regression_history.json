@@ -5,5 +5,12 @@
     "tests_passed_pct": 100,
     "compilation_success_pct": 100,
     "reliability_avg": 62.0
+  },
+  {
+    "run_id": "run-a9f3a9c00672",
+    "ts": 1785748076.2275012,
+    "tests_passed_pct": 100,
+    "compilation_success_pct": 100,
+    "reliability_avg": 72.2
   }
 ]
